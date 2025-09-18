@@ -22,10 +22,10 @@ class PolygonMCPClient:
     async def __aenter__(self):
         """Async context manager entry"""
         self.stdio_client = stdio_client(self.server_params)
-        self.session = await self.stdio_client.__aenter__()
+        self.session, _ = await self.stdio_client.__aenter__()
         
         # Initialize the server connection
-        await self.session.initialize()
+        # await self.session.initialize()
         return self
     
     async def __aexit__(self, exc_type, exc_val, exc_tb):

@@ -32,11 +32,8 @@ report_generator = LlmAgent(
 
     You will receive the following inputs:
 
-    * **Fundamental Data:**
+    * **Stock Data:**
     {stock_data_agent_result}
-
-    * **Market and Technical Data:**
-    {market_data_agent_result}
     
     * **Sentiment Analysis:**
     {sentiment_agent_result}

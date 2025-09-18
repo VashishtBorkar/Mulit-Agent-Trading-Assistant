@@ -1,18 +1,18 @@
-from google.adk.agents import LlmAgent, AgentTool
+from google.adk.agents import LlmAgent
+from google.adk.tools import AgentTool
 from .sub_agents.stock_data_agent import stock_data_agent
 from .sub_agents.sentiment_agent import sentiment_agent
 from .sub_agents.report_generator_agent import report_generator
 from .sub_agents.nlp_screener_agent import nlp_screener_agent
 
 root_agent = LlmAgent(
-    name="stock-research-assistant",
+    name="stock_research_assistant",
     description="A comprehensive assistant for analyzing stocks, market trends, and news sentiment to generate in-depth investor reports.",
-    model="gemini-2.5-pro",  # Or your preferred Gemini model
+    model="gemini-2.5-pro",
     tools=[
         AgentTool(agent=stock_data_agent),
         AgentTool(agent=sentiment_agent),
-        AgentTool(agent=report_generator),
-        AgentTool(agent=nlp_screener_agent),
+        AgentTool(agent=report_generator, skip_summarization=True), # keep report format
     ],
     instruction="""
     You are an expert AI Stock Research Assistant. Your primary goal is to help users

@@ -2,7 +2,7 @@ from google.adk.agents import LlmAgent
 from google.adk.tools import google_search
 
 sentiment_agent = LlmAgent(
-    name="stock_information_agent",
+    name="stock_sentiment_agent",
     model="gemini-2.0-flash",
     description="Agent to gather current sentiment around a specific stock.",
     instruction="""

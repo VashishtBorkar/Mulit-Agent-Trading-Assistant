@@ -1,9 +1,9 @@
 from google.adk.agents import LlmAgent
 from google.adk.tools import AgentTool
+from google.genai import types
 from .sub_agents.stock_data_agent import stock_data_agent
 from .sub_agents.sentiment_agent import sentiment_agent
 from .sub_agents.report_generator_agent import report_generator
-from .sub_agents.nlp_screener_agent import nlp_screener_agent
 
 root_agent = LlmAgent(
     name="stock_research_assistant",
@@ -26,6 +26,11 @@ root_agent = LlmAgent(
 
     **Do not provide financial advice, and do not execute trades.**
     Use your tools to fulfill user requests, and always aim to provide clear, actionable insights in your final response.
-    If a query is outside the scope of stock research, politely inform the user of your purpose.
-    """
+    If a query is outside the scope of stock research, politely inform the user of your purpose. 
+    """,
+    generate_content_config=types.GenerateContentConfig(
+        temperature=0.7,
+        top_p=0.9,
+        # max_output_tokens=1000 
+    )
 )

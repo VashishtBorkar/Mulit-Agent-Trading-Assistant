@@ -3,7 +3,7 @@
 The Multi-Agent Stock Research Assistant is an AI-powered system designed to make stock market research easier to understand and more interactive. By combining multiple specialized agents with a conversational LLM interface, users can explore company fundamentals, market trends, sentiment analysis, and strategy insights through natural dialogue while still receiving accurate, grounded information.  
 
 ## Demo
-<a href="https://youtu.be/jzH8b4IN4pM" target="_blank">Link to demo video (Coming Soon) </a>
+<a href="https://youtu.be/jzH8b4IN4pM" target="_blank">Link to demo video</a>
 
 ## Features
 - Multi-agent orchestration, with agent focusing on a different research track (market data and sentiment)  
